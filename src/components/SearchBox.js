@@ -32,8 +32,9 @@ class SearchBox extends Component{
 
 
     selectedText(value) {
+        console.log("input box searched[][]");
         this.setState(() => ({
-            text: '',
+            text: value,
             refere:value,
             suggestions: [],
         }))
@@ -60,16 +61,26 @@ class SearchBox extends Component{
     }
     
     render() {
-        const { text, suggestions ,refere} = this.state;
+        const { text ,refere} = this.state;
+        const r1= (refere)?(<h1>List is rendered for <span className ={styles.primary}>{refere}</span></h1>):null
+
         return(
-            <div className={styles.container}>
-                <input id="query" type="text" onChange={this.onTextChange} value={text}/>
-                <h2>
-                {this.renderSuggestions()}
-                </h2>
-                <h2>
-                List is rendered for {refere}
-                </h2>
+
+            <div className={styles.box}>
+
+                <div className={styles.container}>
+                    <div className ={styles.query}>
+                        <input id="query" type="text" onChange={this.onTextChange} value={text}/>
+                        <h2>
+                            {this.renderSuggestions()}
+                        </h2>
+                    </div>
+                        <button
+                        onClick={() =>this.selectedText(text)}
+                        >Search</button>
+                </div>
+                   
+                   {r1}
             </div>
         );
     }

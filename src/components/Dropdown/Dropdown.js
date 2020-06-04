@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown } from "semantic-ui-react";
 
 const options = [
-  { key: "pre", text: "Pre_stage", value: "pre_seed" },
+  { key: "pre", text: "Pre_seed", value: "pre_seed" },
   { key: "early", text: "Early_stage", value: "early_stage" },
   { key: "growth", text: "Growth_stage", value: "growth_stage" },
 ];

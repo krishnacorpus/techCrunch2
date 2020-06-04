@@ -8,8 +8,12 @@ import Filter from "../Filter/Filter";
 
 const App2 = (props) => (
   <Container style={{ margin: 20, display: 'inline-block', maxWidth: 100}}>
-      <Dropdown dropdownOnChange={props.dropdownOnChange} />
+
+    <span>
       <Filter filterListHandler2={props.filterListHandler2} show={props.show} />
+      <Dropdown dropdownOnChange={props.dropdownOnChange} />
+    </span>
+      
   </Container>
 );
 

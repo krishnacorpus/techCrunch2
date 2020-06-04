@@ -8,13 +8,34 @@ box-sizing: border-box;
 
 input{
     padding: 12px;
-    width: 80%;
+    width:90%;
     font-size: 20px;
 }
 
-.container{
+.primary{
+    color: aqua;
+}
+.box{
     margin: auto;
     max-width: 800px;
+    /* border: 1px solid red; */
+
+}
+
+.container{
+   
+    padding: 10px;
+    text-align:left;
+   
+}
+
+button{
+    padding: 18px;
+    font-size: 22px;
+    background-color: rgb(211, 141, 95);
+    text-align: right;
+    outline: none;
+    border: none;
    
 }
 

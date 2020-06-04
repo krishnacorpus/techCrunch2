@@ -5,8 +5,11 @@ import axios from 'axios';
 
 import App2 from './components/App2/App2';
 import SearchBox from './components/SearchBox';
+
+
+let trim = false;
 let Types=[];
-let show=false;
+let show=true;
 class App extends Component {
 
   state ={
@@ -49,6 +52,15 @@ class App extends Component {
   }
 
 hasSubArray(master, sub) {
+
+  // for (let i in sub){
+  //   if (master.includes(i)){
+  //     console.log(master.includes(i))
+  //   }else{
+  //     return false
+  //   }
+  // }
+  // return true
   return sub.every((i => v => i = master.indexOf(v, i) + 1)(0));
 }
 
@@ -62,7 +74,14 @@ hasSubArray(master, sub) {
 
     // for Filter button
     filterListHandler2 =() =>{
-      let data=[...this.state.trimmed_data];
+      let data=[];
+      if (trim){
+
+         data=[...this.state.trimmed_data];
+      }else{
+         data=[...this.state.custom_data];
+
+      }
       let myfilter=[];
       for (var i = 0; i < data.length; i++){
       let check =this.hasSubArray(data[i].roundTypes,Types)
@@ -76,6 +95,9 @@ hasSubArray(master, sub) {
         //   }
         //   myfilter.push(x)
         // }
+      console.log("show",show,"from filter but");
+      // console.log("trim",trim,"from filter but");
+        trim=true;
         this.setState({trimmed_data:myfilter});
         }
 
@@ -83,6 +105,13 @@ hasSubArray(master, sub) {
   
     // for searchbar
   fetchListHandler =(name)=>{
+    // Types=[];
+    if(name === ''){
+      trim=false
+      this.renderListHandler();
+    }else{
+      trim = true;
+    }
       let data=[...this.state.custom_data];
       let trimmed_data=[]
       for (var i = 0; i <data.length; i++){
@@ -105,18 +134,20 @@ hasSubArray(master, sub) {
 
   renderListHandler(){
     let checkList=[]
-    // if (this.state.filtered_data.length){
-    //   checkList=[
-    //     ...this.state.filtered_data
-    //   ]
-    //   this.setState({filtered_data:[]})
-    //   // checkList=myList
-    // }else{
-    // }
-      checkList=this.state.trimmed_data
+    if (trim){
+      checkList=this.state.trimmed_data;
+
       
+    }else{
+      checkList=this.state.custom_data;
+    }
+
+      
+    // console.log("show",show,"from renderList");
+    // console.log("trim",trim,"from renderList");
     
     if (checkList.length){
+      show=true;
       return(
         <div>
         {checkList.map(item =>{
@@ -138,12 +169,13 @@ hasSubArray(master, sub) {
       )
     }
     else{
+      show=false;
       return(<h2>No Data</h2>)
     }
   }
 
   render(){
-    show = this.state.trimmed_data.length >0
+    // show = this.state.trimmed_data.length >0
     return (
       <div className={classes.App}>
         <h1>Tech CruncH</h1>
