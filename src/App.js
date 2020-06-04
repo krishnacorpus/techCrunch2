@@ -72,6 +72,21 @@ hasSubArray(master, sub) {
     };
 
 
+    sortData=()=>{
+      console.log("[]Sort Data");
+      let data=[];
+      if (trim){
+         data=[...this.state.trimmed_data];
+      }else{
+         data=[...this.state.custom_data];
+      }
+        const obj = data.sort((a, b) => {
+          return a.lastName.localeCompare(b.lastName);
+        });
+        trim=true;
+        this.setState({ trimmed_data: obj });
+    }
+
     // for Filter button
     filterListHandler2 =() =>{
       let data=[];
@@ -100,7 +115,6 @@ hasSubArray(master, sub) {
         trim=true;
         this.setState({trimmed_data:myfilter});
         }
-
     }
   
     // for searchbar
@@ -108,6 +122,7 @@ hasSubArray(master, sub) {
     // Types=[];
     if(name === ''){
       trim=false
+      // return
       this.renderListHandler();
     }else{
       trim = true;
@@ -129,15 +144,10 @@ hasSubArray(master, sub) {
       this.setState({trimmed_data:trimmed_data});
   }
 
-
-
-
   renderListHandler(){
     let checkList=[]
     if (trim){
       checkList=this.state.trimmed_data;
-
-      
     }else{
       checkList=this.state.custom_data;
     }
@@ -190,6 +200,7 @@ hasSubArray(master, sub) {
         filterListHandler2={this.filterListHandler2}
         />
         </span>
+        <button onClick={this.sortData} className={classes.sort}>Sort</button>
         {this.renderListHandler()}
       </div>
     );
