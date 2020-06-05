@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/techCrunch2/static/css/main.d7d6402d.chunk.css",
-    "main.js": "/techCrunch2/static/js/main.06ed2d10.chunk.js",
-    "main.js.map": "/techCrunch2/static/js/main.06ed2d10.chunk.js.map",
+    "main.js": "/techCrunch2/static/js/main.02bef865.chunk.js",
+    "main.js.map": "/techCrunch2/static/js/main.02bef865.chunk.js.map",
     "runtime-main.js": "/techCrunch2/static/js/runtime-main.9fd7dc8d.js",
     "runtime-main.js.map": "/techCrunch2/static/js/runtime-main.9fd7dc8d.js.map",
-    "static/js/2.5c233979.chunk.js": "/techCrunch2/static/js/2.5c233979.chunk.js",
-    "static/js/2.5c233979.chunk.js.map": "/techCrunch2/static/js/2.5c233979.chunk.js.map",
+    "static/js/2.dbd0949e.chunk.js": "/techCrunch2/static/js/2.dbd0949e.chunk.js",
+    "static/js/2.dbd0949e.chunk.js.map": "/techCrunch2/static/js/2.dbd0949e.chunk.js.map",
     "index.html": "/techCrunch2/index.html",
-    "precache-manifest.b8117279d521b68599e3d3be4ab78e6d.js": "/techCrunch2/precache-manifest.b8117279d521b68599e3d3be4ab78e6d.js",
+    "precache-manifest.508cb7211c56da010f0f795431980673.js": "/techCrunch2/precache-manifest.508cb7211c56da010f0f795431980673.js",
     "service-worker.js": "/techCrunch2/service-worker.js",
     "static/css/main.d7d6402d.chunk.css.map": "/techCrunch2/static/css/main.d7d6402d.chunk.css.map",
-    "static/js/2.5c233979.chunk.js.LICENSE.txt": "/techCrunch2/static/js/2.5c233979.chunk.js.LICENSE.txt"
+    "static/js/2.dbd0949e.chunk.js.LICENSE.txt": "/techCrunch2/static/js/2.dbd0949e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9fd7dc8d.js",
-    "static/js/2.5c233979.chunk.js",
+    "static/js/2.dbd0949e.chunk.js",
     "static/css/main.d7d6402d.chunk.css",
-    "static/js/main.06ed2d10.chunk.js"
+    "static/js/main.02bef865.chunk.js"
   ]
 }

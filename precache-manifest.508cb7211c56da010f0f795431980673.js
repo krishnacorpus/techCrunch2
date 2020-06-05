@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3daaae8ef3a4e86df8bef3e4b3a9130e",
+    "revision": "1f4eade859be4453cf658fca87041808",
     "url": "/techCrunch2/index.html"
   },
   {
-    "revision": "19c0d3ac6b41a2f95550",
+    "revision": "29ae5b4dfdc6aa960ef3",
     "url": "/techCrunch2/static/css/main.d7d6402d.chunk.css"
   },
   {
-    "revision": "6f6a985e037588cb2379",
-    "url": "/techCrunch2/static/js/2.5c233979.chunk.js"
+    "revision": "f6621655b47ea07e2a3d",
+    "url": "/techCrunch2/static/js/2.dbd0949e.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/techCrunch2/static/js/2.5c233979.chunk.js.LICENSE.txt"
+    "url": "/techCrunch2/static/js/2.dbd0949e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "19c0d3ac6b41a2f95550",
-    "url": "/techCrunch2/static/js/main.06ed2d10.chunk.js"
+    "revision": "29ae5b4dfdc6aa960ef3",
+    "url": "/techCrunch2/static/js/main.02bef865.chunk.js"
   },
   {
     "revision": "85c02c1f6d1665146007",
