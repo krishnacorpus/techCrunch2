@@ -10,6 +10,8 @@ import SearchBox from './components/SearchBox';
 let trim = false;
 let Types=[];
 let show=true;
+
+let toggleSort =false;
 class App extends Component {
 
   state ={
@@ -51,6 +53,12 @@ class App extends Component {
     })
   }
 
+  // shouldComponentUpdate(p,s){
+  //   if(toggleSort){
+
+  //   }
+  // }
+
 hasSubArray(master, sub) {
 
   // for (let i in sub){
@@ -71,20 +79,32 @@ hasSubArray(master, sub) {
       // console.log(Types);
     };
 
-
+//for sort
     sortData=()=>{
+
       console.log("[]Sort Data");
+      console.log(toggleSort);
+      
       let data=[];
       if (trim){
-         data=[...this.state.trimmed_data];
+        data=[...this.state.trimmed_data];
       }else{
-         data=[...this.state.custom_data];
+        data=[...this.state.custom_data];
       }
+      if (toggleSort){
+          
+        console.log("[]Sort  reverse");
+        let y = [...data].reverse();
+        this.setState({ trimmed_data: y });
+      }else{
         const obj = data.sort((a, b) => {
           return a.lastName.localeCompare(b.lastName);
         });
         trim=true;
+        toggleSort=true;
+        // console.log(toggleSort);
         this.setState({ trimmed_data: obj });
+      }
     }
 
     // for Filter button
@@ -120,6 +140,7 @@ hasSubArray(master, sub) {
     // for searchbar
   fetchListHandler =(name)=>{
     // Types=[];
+    toggleSort=false;
     if(name === ''){
       trim=false
       // return
@@ -145,17 +166,15 @@ hasSubArray(master, sub) {
   }
 
   renderListHandler(){
+
+   
+    console.log('renderList[][][]');
     let checkList=[]
     if (trim){
       checkList=this.state.trimmed_data;
     }else{
       checkList=this.state.custom_data;
     }
-
-      
-    // console.log("show",show,"from renderList");
-    // console.log("trim",trim,"from renderList");
-    
     if (checkList.length){
       show=true;
       return(
@@ -185,6 +204,7 @@ hasSubArray(master, sub) {
   }
 
   render(){
+    const sortnote = toggleSort ?(<h2>Note: Sorted based on Last-Name</h2>):null;
     // show = this.state.trimmed_data.length >0
     return (
       <div className={classes.App}>
@@ -201,6 +221,8 @@ hasSubArray(master, sub) {
         />
         </span>
         <button onClick={this.sortData} className={classes.sort}>Sort</button>
+        {sortnote}
+        
         {this.renderListHandler()}
       </div>
     );
